@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Technology:</strong>
+  <%= @technology.technology %>
+</p>
+
+<p>
+  <strong>Date created:</strong>
+  <%= @technology.date_created %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @technology.version %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @technology.description %>
+</p>
+
+<p>
+  <strong>Logo:</strong>
+  <%= @technology.logo %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @technology.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_technology_path(@technology) %> |
+<%= link_to 'Back', technologies_path %>
