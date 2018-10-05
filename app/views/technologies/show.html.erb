@@ -21,14 +21,15 @@
 </p>
 
 <p>
-  <strong>Logo:</strong>
-</p>
-<%= image_tag @technology.logo, class:'img-responsive',width:'300px'%>
-
-<p>
   <strong>User:</strong>
   <%= @technology.user_id %>
 </p>
+<p>
+  <strong>Logo:</strong>
+  <br>
+  <%= image_tag @technology.logo, class:'img-responsive',width:'300px'%>
+</p>
+
 
 <%= link_to 'Edit', edit_technology_path(@technology) %> |
 <%= link_to 'Back', technologies_path %>
