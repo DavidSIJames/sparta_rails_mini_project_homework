@@ -36,15 +36,23 @@
       <%= link_to 'Back', technologies_path %>
     </div>
     <div class="col-md-6">
-      <%= link_to "New Comment", new_technology_comment_path(@technology) %>
+      <p><strong>Comments</strong></p>
+      <% if user_signed_in? %>
+        <%= link_to "New Comment", new_technology_comment_path(@technology) %>
+      <% end %>
       <ul>
         <% @technology.comments.each do |comment| %>
         <li>
-          <%= link_to edit_technology_comment_path(@technology,comment) do %>
+          <% if user_signed_in? && current_user.id == @technology.user_id %>
+            <%= link_to edit_technology_comment_path(@technology,comment) do %>
+              <%= comment.body %>
+            <% end %>
+            | <%= link_to 'Show', technology_comment_path(@technology,comment) %>
+            | <%= link_to 'Delet this nephew', technology_comment_url(@technology,comment), method: :delete,data: {confirm: "Deleting your comment, twitter fingers?"} %>
+          <% else %>
             <%= comment.body %>
+            | <%= link_to 'Show', technology_comment_path(@technology,comment) %>
           <% end %>
-          | <%= link_to 'Show', technology_comment_path(@technology,comment) %>
-          | <%= link_to 'Delet this nephew', technology_comment_url(@technology,comment), method: :delete,data: {confirm: "Deleting your comment, twitter fingers?"} %>
         </li>
         <% end %>
       </ul>
