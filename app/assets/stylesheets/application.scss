@@ -12,4 +12,7 @@
  *
  */
 @import 'bootstrap';
-@import 'components/navbar'
+@import 'global/variables';
+@import 'global/global';
+@import 'components/navbar';
+@import 'components/jumbotron'

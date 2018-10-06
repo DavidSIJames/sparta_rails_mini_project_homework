@@ -1,0 +1,10 @@
+body{
+  background: $mainBackground;
+  color: $jumbotronTextColor;
+  a{
+    color:$mainLinkColor;
+    &:hover{
+      color:$mainLinkHoverColor;
+    }
+  }
+}

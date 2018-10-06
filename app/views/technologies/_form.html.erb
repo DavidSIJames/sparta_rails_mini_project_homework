@@ -1,47 +1,54 @@
-<%= form_with(model: technology, local: true) do |form| %>
-  <% if technology.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(technology.errors.count, "error") %> prohibited this technology from being saved:</h2>
 
-      <ul>
+  <%= form_with(model: technology, local: true) do |form| %>
+  <% if technology.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(technology.errors.count, "error") %> prohibited this technology from being saved:</h2>
+
+    <ul>
       <% technology.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :technology %>
+    <br>
     <%= form.text_field :technology %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :date_created %>
+    <br>
     <%= form.date_select :date_created %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :version %>
+    <br>
     <%= form.number_field :version %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :description %>
+    <br>
     <%= form.text_area :description %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :logo %>
+    <br>
     <%= form.file_field :logo %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :user_id %>
+    <br>
     <%= form.number_field :user_id %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
-<% end %>
+  <% end %>
