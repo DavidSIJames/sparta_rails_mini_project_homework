@@ -15,7 +15,7 @@ class CommentsTest < ApplicationSystemTestCase
     click_on "New Comment"
 
     fill_in "Body", with: @comment.body
-    fill_in "Tech", with: @comment.tech_id
+    fill_in "Technology", with: @comment.technology_id
     fill_in "User", with: @comment.user_id
     click_on "Create Comment"
 
@@ -28,7 +28,7 @@ class CommentsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Body", with: @comment.body
-    fill_in "Tech", with: @comment.tech_id
+    fill_in "Technology", with: @comment.technology_id
     fill_in "User", with: @comment.user_id
     click_on "Update Comment"
 

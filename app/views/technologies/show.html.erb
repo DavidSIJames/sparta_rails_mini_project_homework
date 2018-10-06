@@ -1,35 +1,54 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-md-6">
+      <p>
+        <strong>Technology:</strong>
+        <%= @technology.technology %>
+      </p>
 
-<p>
-  <strong>Technology:</strong>
-  <%= @technology.technology %>
-</p>
+      <p>
+        <strong>Date created:</strong>
+        <%= @technology.date_created %>
+      </p>
 
-<p>
-  <strong>Date created:</strong>
-  <%= @technology.date_created %>
-</p>
+      <p>
+        <strong>Version:</strong>
+        <%= @technology.version %>
+      </p>
 
-<p>
-  <strong>Version:</strong>
-  <%= @technology.version %>
-</p>
+      <p>
+        <strong>Description:</strong>
+        <%= @technology.description %>
+      </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @technology.description %>
-</p>
+      <p>
+        <strong>User:</strong>
+        <%= @technology.user_id %>
+      </p>
+      <p>
+        <strong>Logo:</strong>
+        <br>
+        <%= image_tag @technology.logo, class:'img-responsive',width:'300px'%>
+      </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @technology.user_id %>
-</p>
-<p>
-  <strong>Logo:</strong>
-  <br>
-  <%= image_tag @technology.logo, class:'img-responsive',width:'300px'%>
-</p>
+      <%= link_to 'Edit', edit_technology_path(@technology) %> |
+      <%= link_to 'Back', technologies_path %>
+    </div>
+    <div class="col-md-6">
+      <%= link_to "New Comment", new_technology_comment_path(@technology) %>
+      <ul>
+        <% @technology.comments.each do |comment| %>
+        <li>
+          <%= link_to edit_technology_comment_path(@technology,comment) do %>
+            <%= comment.body %>
+          <% end %>
+          | <%= link_to 'Show', technology_comment_path(@technology,comment) %>
+          | <%= link_to 'Delet this nephew', technology_comment_url(@technology,comment), method: :delete,data: {confirm: "Deleting your comment, twitter fingers?"} %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 
-
-<%= link_to 'Edit', edit_technology_path(@technology) %> |
-<%= link_to 'Back', technologies_path %>
+</div>

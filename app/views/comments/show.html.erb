@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>Tech:</strong>
-  <%= @comment.tech_id %>
+  <strong>Technology:</strong>
+  <%= @comment.technology_id %>
 </p>
 
 <p>
@@ -15,5 +15,5 @@
   <%= @comment.body %>
 </p>
 
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+<%= link_to 'Edit', edit_technology_comment_path(@technology,@comment) %> |
+<%= link_to 'Back', technology_path(@technology) %>

@@ -1,4 +1,4 @@
-<%= form_with(model: comment, local: true) do |form| %>
+<%= form_with(model: comment, url:[@technology, @comment], local: true) do |form| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
@@ -17,8 +17,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :tech_id %>
-    <%= form.number_field :tech_id %>
+    <%= form.label :technology_id %>
+    <%= form.number_field :technology_id %>
   </div>
 
   <div class="field">
